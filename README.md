@@ -1,5 +1,5 @@
 # AudiofilesDjangoAPI
-Djnago API for CREATE, GET, UPDATE and DELETE operations.
+Django API for CREATE, GET, UPDATE and DELETE operations.
 
 URLS cheatsheet:
 
