@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="btn btn-secondary btn-sm mb-3" href="#">Back to index</a>
+<table class="table table-dark">
+	<tr>
+		<th>Song ID</th>
+		<th>Name</th>
+		<th>Duration</th>
+		<th>Upload Date</th>
+	</tr>
+	{% for song in songs %}
+	<tr>
+		<td>{{ song.id }}</td>
+		<td>{{ song.songname }}</td>
+		<td>{{ song.duration }}</td>
+		<td>{{ song.uploaded_on }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<h1 class="text-center mb-3">{{ song.songname }}</h1>
+
+{% if error_message %}
+<p class="alert alert-danger">
+	<strong>{{ error_message }}</strong>
+</p>
+{% endif %}
+
+{% endblock %}

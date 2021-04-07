@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="btn btn-secondary btn-sm mb-3" href="#">Back to index</a>
+<table class="table table-dark">
+	<tr>
+		<th>Audiobook ID</th>
+		<th>Name</th>
+		<th>Duration</th>
+		<th>Author</th>
+		<th>Narrator</th>
+		<th>Upload Date</th>
+	</tr>
+	{% for audiobook in audiobooks %}
+	<tr>
+		<td>{{ audiobook.id }}</td>
+		<td>{{ audiobook.bookname }}</td>
+		<td>{{ audiobook.duration }}</td>
+		<td>{{ audiobook.author }}</td>
+		<td>{{ audiobook.narrator }}</td>		
+		<td>{{ audiobook.uploaded_on }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<h1 class="text-center mb-3">{{ audiobook.bookname }}</h1>
+
+{% if error_message %}
+<p class="alert alert-danger">
+	<strong>{{ error_message }}</strong>
+</p>
+{% endif %}
+
+{% endblock %}

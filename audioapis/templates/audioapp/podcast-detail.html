@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="btn btn-secondary btn-sm mb-3" href="#">Back to index</a>
+<table class="table table-dark">
+	<tr>
+		<th>Podcast ID</th>
+		<th>Name</th>
+		<th>Host</th>
+		<th>Duration</th>
+		<th>Participants</th>
+		<th>Upload Date</th>
+	</tr>
+	<tr>
+		<td>{{ podcast.id }}</td>
+		<td>{{ podcast.podcastname }}</td>
+		<td>{{ podcast.host }}</td>
+		<td>{{ podcast.duration }}</td>
+		<td>
+			{% for p in podcast.participant_set.all %}
+				<span> {{ p.participant_name }}</span>,
+			{%	endfor %}
+		</td>>
+		<td>{{ podcast.uploaded_on }}</td>
+	</tr>
+</table>
+<h1 class="text-center mb-3">{{ podcast.podcastname }}</h1>
+
+{% if error_message %}
+<p class="alert alert-danger">
+	<strong>{{ error_message }}</strong>
+</p>
+{% endif %}
+
+{% endblock %}
