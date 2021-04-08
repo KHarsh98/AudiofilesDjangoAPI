@@ -1,6 +1,5 @@
 from django.db import models
-
-# Audiofile - Song
+from django.contrib.auth.models import User
 
 class Song(models.Model):
     def __str__(self):
@@ -8,6 +7,12 @@ class Song(models.Model):
     songname = models.CharField(max_length=100)
     duration = models.PositiveIntegerField()
     uploaded_on = models.DateTimeField(auto_now_add=True)
+    # just a dummy property for testing
+    @property
+    def is_duration_valid(self):  
+        if duration > 0:
+            return True
+        return False
 
 class Podcast(models.Model):
     def __str__(self):

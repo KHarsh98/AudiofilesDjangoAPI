@@ -1,7 +1,14 @@
 from .models import Song, Podcast, Participant, Audiobook
 from .forms import SongForm, PodcastForm, AudiobookForm
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.http import UnreadablePostError, Http404, HttpResponse
+
+
+# INDEX
+@login_required
+def index(request):
+    return render(request, 'audioapp/index.html')
 
 #CREATE API
 def create_new(request, filetype):
