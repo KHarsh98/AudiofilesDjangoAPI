@@ -18,7 +18,7 @@ How to view database:
 ======
 
 * **Superuser details**
-  * usernanem - admin
+  * username - admin
   * password - password
 * Login in at '/admin'
 * Enjoy
